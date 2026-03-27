@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: pratibharpk/pratibharpk.github.io   # ← update to your GitHub username/repo
+  name: git-gateway
   branch: main
 
 media_folder: "images"
