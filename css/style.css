@@ -261,6 +261,10 @@ h1, h2, h3, h4 {
   flex-direction: column;
   gap: 5px;
   padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 .hamburger span {
   display: block; width: 18px; height: 1.5px;
@@ -428,7 +432,7 @@ h1, h2, h3, h4 {
   margin-top: 4px;
 }
 .social-icon {
-  width: 36px; height: 36px;
+  width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.1rem;
   color: var(--text);
@@ -611,7 +615,7 @@ h1, h2, h3, h4 {
   margin-top: 20px;
 }
 .beyond-nav-btn {
-  width: 36px; height: 36px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   background: var(--bg);
   color: var(--text-muted);
@@ -1173,7 +1177,7 @@ h1, h2, h3, h4 {
   bottom: 24px;
   right: 24px;
   z-index: 999;
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   background: var(--accent);
   color: #fff;
@@ -1290,8 +1294,15 @@ h1, h2, h3, h4 {
   .skills-grid-layout { grid-template-columns: 1fr; gap: 32px; }
 
   .form-row { grid-template-columns: 1fr; }
+  .form-group input, .form-group textarea { font-size: 1rem; }
+  .filter-btn { padding: 10px 18px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* ── LANDSCAPE PHONES ──────────────────────────────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { min-height: auto; padding: 80px 22px 40px; }
 }
 
 @media (max-width: 480px) {

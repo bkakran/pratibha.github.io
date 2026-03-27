@@ -37,17 +37,31 @@ function initNavbar() {
     navbar.classList.toggle('scrolled', window.scrollY > 30);
   }, { passive: true });
 
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
   hamburger.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('open');
     navLinks.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
   links.forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu when tapping outside
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') &&
+        !navLinks.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      closeMenu();
+    }
   });
 
   // Highlight active section
@@ -125,7 +139,7 @@ function animateCounters() {
 /* ── PARALLAX SECTION HEADERS ─────────────────────────────── */
 function initParallax() {
   const headers = $$('.section-header');
-  if (!headers.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!headers.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) return;
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;

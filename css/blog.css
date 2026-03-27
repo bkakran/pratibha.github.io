@@ -50,9 +50,9 @@
 }
 .blog-search-clear {
   position: absolute;
-  right: 14px;
-  width: 28px;
-  height: 28px;
+  right: 6px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,6 +179,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-wrap: wrap;
   font-size: 0.78rem;
   color: var(--text-faint);
 }
@@ -429,8 +430,11 @@
     max-width: 100%;
   }
   .blog-search-input {
-    font-size: 0.88rem;
+    font-size: 1rem;
     padding: 12px 44px 12px 42px;
+  }
+  .blog-filter-btn {
+    padding: 10px 18px;
   }
   .blog-grid {
     grid-template-columns: 1fr;
@@ -462,5 +466,8 @@
   }
   .article-header {
     padding: 88px 0 24px;
+  }
+  .article-body blockquote {
+    padding-left: 16px;
   }
 }
