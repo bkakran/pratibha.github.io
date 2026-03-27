@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OG Image Generator — Pratibha RPK</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --black: #1c1b18;
+      --gray-2: #65635c;
+      --gray-3: #97958e;
+      --gray-4: #e0ddd6;
+      --gray-5: #f4f2ed;
+      --white: #fefdfb;
+      --accent: #5a6e8a;
+      --accent-hover: #6a7e9a;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--gray-5);
+      color: var(--black);
+      min-height: 100vh;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .page-header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .page-header p {
+      color: var(--gray-2);
+      font-size: 1rem;
+    }
+    .page-header a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .page-header a:hover { text-decoration: underline; }
+
+    .generator-layout {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* Canvas preview */
+    .preview-wrap {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(28,27,24,0.06);
+    }
+    .preview-wrap h2 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .canvas-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1200 / 630;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(28,27,24,0.1);
+    }
+    .canvas-container canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .preview-info {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .preview-info span {
+      font-size: 0.78rem;
+      color: var(--gray-3);
+    }
+
+    /* Controls panel */
+    .controls-panel {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(28,27,24,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .controls-panel h2 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--gray-5);
+      border: 1.5px solid transparent;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      color: var(--black);
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+    }
+    .form-group textarea { resize: vertical; min-height: 60px; }
+
+    .template-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .template-tab {
+      padding: 6px 14px;
+      font-family: var(--font);
+      font-size: 0.78rem;
+      font-weight: 500;
+      border: 1.5px solid var(--gray-4);
+      border-radius: 980px;
+      background: transparent;
+      color: var(--gray-2);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .template-tab:hover { border-color: var(--accent); color: var(--accent); }
+    .template-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 980px;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-secondary {
+      background: var(--gray-5);
+      color: var(--black);
+    }
+    .btn-secondary:hover { background: var(--gray-4); }
+    .btn-full { width: 100%; justify-content: center; }
+
+    .divider {
+      height: 1px;
+      background: var(--gray-4);
+    }
+
+    /* Presets */
+    .preset-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .preset-chip {
+      padding: 4px 12px;
+      font-family: var(--font);
+      font-size: 0.72rem;
+      font-weight: 500;
+      border: 1px solid var(--gray-4);
+      border-radius: 980px;
+      background: transparent;
+      color: var(--gray-2);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .preset-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .generator-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>OG Image Generator</h1>
+    <p>Create branded social share images (1200 &times; 630) &nbsp;·&nbsp; <a href="index.html">&larr; Back to site</a></p>
+  </div>
+
+  <div class="generator-layout">
+    <!-- Preview -->
+    <div class="preview-wrap">
+      <h2>Preview</h2>
+      <div class="canvas-container">
+        <canvas id="og-canvas" width="1200" height="630"></canvas>
+      </div>
+      <div class="preview-info">
+        <span>1200 &times; 630px &nbsp;·&nbsp; Optimized for LinkedIn, Twitter, Facebook</span>
+        <span id="file-size"></span>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls-panel">
+      <h2>Template</h2>
+      <div class="template-tabs">
+        <button class="template-tab active" data-template="homepage">Homepage</button>
+        <button class="template-tab" data-template="blog">Blog Post</button>
+        <button class="template-tab" data-template="minimal">Minimal</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="form-group">
+        <label for="og-title">Title</label>
+        <input type="text" id="og-title" value="Pratibha Raju Prem Kumar" />
+      </div>
+
+      <div class="form-group">
+        <label for="og-subtitle">Subtitle</label>
+        <input type="text" id="og-subtitle" value="Staff Product Manager" />
+      </div>
+
+      <div class="form-group">
+        <label for="og-tagline">Tagline</label>
+        <textarea id="og-tagline" rows="2">Driving growth through advertising platforms, IoT innovation, and data-driven strategy.</textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="og-badge">Badge Text</label>
+        <input type="text" id="og-badge" value="pratibharpk.com" />
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Quick Presets</h2>
+      <div class="preset-chips">
+        <button class="preset-chip" data-preset="default">Default Homepage</button>
+        <button class="preset-chip" data-preset="resume">Resume Focus</button>
+        <button class="preset-chip" data-preset="speaker">Speaker Card</button>
+        <button class="preset-chip" data-preset="contact">Contact Card</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Download</h2>
+      <div class="btn-row">
+        <button class="btn btn-primary btn-full" id="btn-download-png">
+          <i class="fas fa-download"></i> Download PNG
+        </button>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-secondary btn-full" id="btn-download-jpg">
+          <i class="fas fa-image"></i> Download JPG (smaller)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  'use strict';
+
+  const canvas = document.getElementById('og-canvas');
+  const ctx    = canvas.getContext('2d');
+  const W      = 1200;
+  const H      = 630;
+
+  // Parchment & Ink palette
+  const COLORS = {
+    bg:         '#fefdfb',
+    bgAlt:      '#f4f2ed',
+    black:      '#1c1b18',
+    gray1:      '#3d3b36',
+    gray2:      '#65635c',
+    gray3:      '#97958e',
+    gray4:      '#e0ddd6',
+    accent:     '#5a6e8a',
+    accentHover:'#6a7e9a',
+    white:      '#ffffff',
+  };
+
+  let currentTemplate = 'homepage';
+
+  // ── DRAWING HELPERS ─────────────────────────────────────────
+  function roundRect(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  function wrapText(text, x, y, maxWidth, lineHeight) {
+    const words = text.split(' ');
+    let line = '';
+    let lines = [];
+    for (const word of words) {
+      const testLine = line + word + ' ';
+      if (ctx.measureText(testLine).width > maxWidth && line) {
+        lines.push(line.trim());
+        line = word + ' ';
+      } else {
+        line = testLine;
+      }
+    }
+    lines.push(line.trim());
+    lines.forEach((l, i) => {
+      ctx.fillText(l, x, y + i * lineHeight);
+    });
+    return lines.length;
+  }
+
+  // ── AMBIENT ORB (matches hero gradient orbs) ────────────────
+  function drawOrb(x, y, radius, color, opacity) {
+    const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+    gradient.addColorStop(0, color + Math.round(opacity * 255).toString(16).padStart(2, '0'));
+    gradient.addColorStop(1, color + '00');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+  }
+
+  // ── TEMPLATE: HOMEPAGE ──────────────────────────────────────
+  function drawHomepage(title, subtitle, tagline, badge) {
+    // Background
+    ctx.fillStyle = COLORS.bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Ambient gradient orbs (matching hero)
+    drawOrb(W * 0.85, H * 0.1, 300, COLORS.accent, 0.08);
+    drawOrb(W * 0.1, H * 0.85, 250, COLORS.accentHover, 0.06);
+    drawOrb(W * 0.5, H * 0.5, 200, COLORS.accent, 0.03);
+
+    // Subtle grid pattern
+    ctx.strokeStyle = COLORS.gray4 + '40';
+    ctx.lineWidth = 0.5;
+    for (let x = 0; x < W; x += 60) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (let y = 0; y < H; y += 60) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
+
+    // Left accent bar
+    ctx.fillStyle = COLORS.accent;
+    ctx.fillRect(0, 0, 6, H);
+
+    // Content area
+    const padLeft = 80;
+    const padTop = 100;
+
+    // Badge pill (top)
+    ctx.font = '600 14px Inter, sans-serif';
+    const badgeWidth = ctx.measureText(badge).width + 28;
+    roundRect(padLeft, padTop, badgeWidth, 30, 15);
+    ctx.fillStyle = COLORS.accent + '15';
+    ctx.fill();
+    ctx.fillStyle = COLORS.accent;
+    ctx.fillText(badge, padLeft + 14, padTop + 20);
+
+    // Subtitle / eyebrow
+    ctx.font = '600 16px Inter, sans-serif';
+    ctx.fillStyle = COLORS.accent;
+    ctx.letterSpacing = '0.04em';
+    ctx.fillText(subtitle.toUpperCase(), padLeft, padTop + 80);
+
+    // Title (large)
+    ctx.font = '800 58px Inter, sans-serif';
+    ctx.fillStyle = COLORS.black;
+    ctx.letterSpacing = '-0.03em';
+    const titleLines = wrapText(title, padLeft, padTop + 150, W - padLeft - 200, 68);
+
+    // Tagline
+    ctx.font = '400 20px Inter, sans-serif';
+    ctx.fillStyle = COLORS.gray2;
+    const tagY = padTop + 150 + titleLines * 68 + 24;
+    wrapText(tagline, padLeft, tagY, W - padLeft - 260, 30);
+
+    // Bottom stats bar
+    const statsY = H - 80;
+    ctx.fillStyle = COLORS.gray4 + '60';
+    ctx.fillRect(padLeft, statsY - 20, W - padLeft - 80, 1);
+
+    const stats = ['12+ Years', '$120M+ Impact', 'IIM Ahmedabad', 'Stanford'];
+    ctx.font = '600 14px Inter, sans-serif';
+    stats.forEach((stat, i) => {
+      const x = padLeft + i * 200;
+      ctx.fillStyle = i === 0 ? COLORS.accent : COLORS.gray3;
+      ctx.fillText(stat, x, statsY + 10);
+    });
+
+    // Right decorative element — initials circle
+    const circleX = W - 160;
+    const circleY = H * 0.4;
+    ctx.beginPath();
+    ctx.arc(circleX, circleY, 80, 0, Math.PI * 2);
+    ctx.fillStyle = COLORS.bgAlt;
+    ctx.fill();
+    ctx.strokeStyle = COLORS.gray4;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Double ring
+    ctx.beginPath();
+    ctx.arc(circleX, circleY, 86, 0, Math.PI * 2);
+    ctx.strokeStyle = COLORS.accent + '30';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    ctx.font = '700 52px Inter, sans-serif';
+    ctx.fillStyle = COLORS.accent;
+    ctx.textAlign = 'center';
+    ctx.fillText('P', circleX, circleY + 18);
+    ctx.textAlign = 'left';
+  }
+
+  // ── TEMPLATE: BLOG POST ─────────────────────────────────────
+  function drawBlogPost(title, subtitle, tagline, badge) {
+    // Background
+    ctx.fillStyle = COLORS.bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Ambient orbs
+    drawOrb(W * 0.9, H * 0.2, 250, COLORS.accent, 0.06);
+    drawOrb(W * 0.05, H * 0.9, 200, COLORS.accentHover, 0.05);
+
+    // Top accent strip
+    const stripGrad = ctx.createLinearGradient(0, 0, W, 0);
+    stripGrad.addColorStop(0, COLORS.accent);
+    stripGrad.addColorStop(1, COLORS.accentHover);
+    ctx.fillStyle = stripGrad;
+    ctx.fillRect(0, 0, W, 6);
+
+    // Content
+    const padLeft = 80;
+
+    // Category badge
+    ctx.font = '700 13px Inter, sans-serif';
+    const catText = subtitle.toUpperCase();
+    const catWidth = ctx.measureText(catText).width + 24;
+    roundRect(padLeft, 60, catWidth, 28, 14);
+    ctx.fillStyle = COLORS.accent;
+    ctx.fill();
+    ctx.fillStyle = COLORS.white;
+    ctx.fillText(catText, padLeft + 12, 79);
+
+    // Blog title (large)
+    ctx.font = '800 48px Inter, sans-serif';
+    ctx.fillStyle = COLORS.black;
+    const titleY = 140;
+    const lines = wrapText(title, padLeft, titleY, W - padLeft - 100, 58);
+
+    // Excerpt
+    if (tagline) {
+      ctx.font = '400 19px Inter, sans-serif';
+      ctx.fillStyle = COLORS.gray2;
+      const excerptY = titleY + lines * 58 + 20;
+      wrapText(tagline, padLeft, excerptY, W - padLeft - 140, 28);
+    }
+
+    // Bottom bar
+    const bottomY = H - 70;
+    ctx.fillStyle = COLORS.gray4 + '60';
+    ctx.fillRect(padLeft, bottomY - 16, W - padLeft * 2, 1);
+
+    // Author + site
+    ctx.font = '600 15px Inter, sans-serif';
+    ctx.fillStyle = COLORS.black;
+    ctx.fillText('Pratibha Raju Prem Kumar', padLeft, bottomY + 8);
+
+    ctx.font = '400 14px Inter, sans-serif';
+    ctx.fillStyle = COLORS.gray3;
+    ctx.fillText(badge, padLeft + ctx.measureText('Pratibha Raju Prem Kumar  ').width + 40, bottomY + 8);
+
+    // Read indicator — decorative book icon area
+    const readX = W - padLeft - 30;
+    ctx.font = '400 14px Inter, sans-serif';
+    ctx.fillStyle = COLORS.accent;
+    ctx.textAlign = 'right';
+    ctx.fillText('READ ON BLOG  \u2192', readX, bottomY + 8);
+    ctx.textAlign = 'left';
+  }
+
+  // ── TEMPLATE: MINIMAL ──────────────────────────────────────
+  function drawMinimal(title, subtitle, tagline, badge) {
+    // Pure white background
+    ctx.fillStyle = COLORS.bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Single subtle orb
+    drawOrb(W * 0.8, H * 0.3, 350, COLORS.accent, 0.04);
+
+    // Center content
+    ctx.textAlign = 'center';
+
+    // Eyebrow
+    ctx.font = '600 14px Inter, sans-serif';
+    ctx.fillStyle = COLORS.accent;
+    ctx.fillText(subtitle.toUpperCase(), W / 2, 200);
+
+    // Name
+    ctx.font = '800 64px Inter, sans-serif';
+    ctx.fillStyle = COLORS.black;
+    ctx.fillText(title, W / 2, 290);
+
+    // Thin line
+    ctx.fillStyle = COLORS.gray4;
+    ctx.fillRect(W / 2 - 40, 316, 80, 2);
+
+    // Tagline
+    ctx.font = '400 20px Inter, sans-serif';
+    ctx.fillStyle = COLORS.gray2;
+    wrapText(tagline, W / 2 - 300, 355, 600, 30);
+
+    // Badge bottom
+    ctx.font = '500 14px Inter, sans-serif';
+    ctx.fillStyle = COLORS.gray3;
+    ctx.fillText(badge, W / 2, H - 60);
+
+    ctx.textAlign = 'left';
+  }
+
+  // ── MAIN RENDER ─────────────────────────────────────────────
+  function render() {
+    const title    = document.getElementById('og-title').value;
+    const subtitle = document.getElementById('og-subtitle').value;
+    const tagline  = document.getElementById('og-tagline').value;
+    const badge    = document.getElementById('og-badge').value;
+
+    ctx.clearRect(0, 0, W, H);
+
+    switch (currentTemplate) {
+      case 'homepage': drawHomepage(title, subtitle, tagline, badge); break;
+      case 'blog':     drawBlogPost(title, subtitle, tagline, badge); break;
+      case 'minimal':  drawMinimal(title, subtitle, tagline, badge); break;
+    }
+
+    // Update estimated file size
+    const dataUrl = canvas.toDataURL('image/png');
+    const sizeKB = Math.round((dataUrl.length * 3 / 4) / 1024);
+    document.getElementById('file-size').textContent = `~${sizeKB} KB (PNG)`;
+  }
+
+  // ── PRESETS ─────────────────────────────────────────────────
+  const PRESETS = {
+    default: {
+      template: 'homepage',
+      title: 'Pratibha Raju Prem Kumar',
+      subtitle: 'Staff Product Manager',
+      tagline: 'Driving growth through advertising platforms, IoT innovation, and data-driven strategy.',
+      badge: 'pratibharpk.com',
+    },
+    resume: {
+      template: 'homepage',
+      title: 'Pratibha Raju Prem Kumar',
+      subtitle: '12+ Years Product Leadership',
+      tagline: 'MBA from IIM Ahmedabad · Stanford · $120M+ revenue impact · Globee Awards Judge',
+      badge: 'pratibharpk.com/resume',
+    },
+    speaker: {
+      template: 'minimal',
+      title: 'Pratibha Raju Prem Kumar',
+      subtitle: 'Speaker & Industry Leader',
+      tagline: 'MWC Barcelona · IBM Watson · IoT World Forum · HIMSS · PTC LiveWorx',
+      badge: 'pratibharpk.com',
+    },
+    contact: {
+      template: 'minimal',
+      title: 'Pratibha Raju Prem Kumar',
+      subtitle: "Let's Connect",
+      tagline: 'Interested in product strategy, platform innovation, or collaboration opportunities?',
+      badge: 'pratibharpk.com',
+    },
+  };
+
+  // ── EVENT BINDINGS ──────────────────────────────────────────
+  document.querySelectorAll('.template-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.template-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentTemplate = btn.dataset.template;
+      render();
+    });
+  });
+
+  document.querySelectorAll('.preset-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const preset = PRESETS[btn.dataset.preset];
+      if (!preset) return;
+
+      document.getElementById('og-title').value    = preset.title;
+      document.getElementById('og-subtitle').value  = preset.subtitle;
+      document.getElementById('og-tagline').value   = preset.tagline;
+      document.getElementById('og-badge').value     = preset.badge;
+
+      // Switch template
+      currentTemplate = preset.template;
+      document.querySelectorAll('.template-tab').forEach(b => {
+        b.classList.toggle('active', b.dataset.template === preset.template);
+      });
+
+      render();
+    });
+  });
+
+  // Live update on input
+  ['og-title', 'og-subtitle', 'og-tagline', 'og-badge'].forEach(id => {
+    document.getElementById(id).addEventListener('input', render);
+  });
+
+  // Download
+  document.getElementById('btn-download-png').addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.download = 'og-image.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+
+  document.getElementById('btn-download-jpg').addEventListener('click', () => {
+    // Create a temp canvas with white bg for JPG (no alpha)
+    const tmpCanvas = document.createElement('canvas');
+    tmpCanvas.width = W;
+    tmpCanvas.height = H;
+    const tmpCtx = tmpCanvas.getContext('2d');
+    tmpCtx.fillStyle = '#ffffff';
+    tmpCtx.fillRect(0, 0, W, H);
+    tmpCtx.drawImage(canvas, 0, 0);
+
+    const link = document.createElement('a');
+    link.download = 'og-image.jpg';
+    link.href = tmpCanvas.toDataURL('image/jpeg', 0.92);
+    link.click();
+  });
+
+  // Initial render when fonts are loaded
+  document.fonts.ready.then(() => {
+    render();
+  });
+
+  // Fallback render
+  setTimeout(render, 500);
+  </script>
+</body>
+</html>

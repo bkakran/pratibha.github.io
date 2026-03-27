@@ -1,0 +1,10 @@
+{
+  "name": "pratibha-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio for Pratibha Raju Prem Kumar — Staff Product Manager",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8080 -o"
+  },
+  "private": true
+}

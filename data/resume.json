@@ -1,0 +1,309 @@
+{
+  "experience": [
+    {
+      "role": "Staff Product Manager",
+      "company": "Walmart Connect",
+      "logo": "images/logos/walmart.svg",
+      "location": "San Bruno, CA",
+      "from": "Dec 2021",
+      "to": null,
+      "description": "Spearheading the development of intuitive, self-service features on a cloud-based, analytics-driven advertising platform for Walmart's sponsored search. Led Pendo platform integration, automating UI development, yielding data-driven user insights and saving 81% of engineering effort. Responsible for implementing algorithmic bidding strategies for campaign management estimated with $70M revenue impact. Developing personalized recommendations for successful advertiser campaign setup estimated with $50M revenue impact. Spearheaded redesign, development & launch of optimization pages, reducing campaign & keyword optimization efforts by 70%. Led development & launch of sponsored brands resulting in access to premium search placement with $9M revenue impact. Led redesign and development of campaign builder page resulting in enhanced user experience and reduction of >30% clicks. Developed & launched bulk operations leading to efficient optimization of multiple campaigns through 99.66% reduction in clicks. Led the 'Out of Budget' platform feature recognized as Best Team Launch for Q3 2024.",
+      "tags": ["Advertising Tech", "Self-Serve Platform", "Analytics", "Campaign Management", "Pendo", "A/B Testing", "Revenue Growth"]
+    },
+    {
+      "role": "Area Director",
+      "company": "HCL America",
+      "logo": "images/logos/hcl.svg",
+      "location": "Sunnyvale, CA",
+      "from": "Jul 2019",
+      "to": "Dec 2021",
+      "description": "Strategic business and product development leading customization of cloud and analytics based solutions and services for enterprises. Responsible for 'Asset Management' & 'AR/VR' product roadmaps in field services, new feature prioritization for strategic accounts. Customized solutions securing partnerships with hi-tech firms for large-scale managed service implementations. Led consultation and definition of tank level monitoring use cases in remote locations. Designed customization & implementation of track & trace solutions. Exceeded revenue target of $24M and was top performer in IoT business development FY19-20 for strategic hi-tech accounts.",
+      "tags": ["Business Development", "IoT", "Cloud Solutions", "AR/VR", "Enterprise Sales", "Strategic Partnerships"]
+    },
+    {
+      "role": "Senior Product Manager",
+      "company": "HCL America",
+      "logo": "images/logos/hcl.svg",
+      "location": "Sunnyvale, CA",
+      "from": "Feb 2017",
+      "to": "Jul 2019",
+      "description": "Led cloud and analytics product management internally and with partners. Led roadmap definition along with cloud partners from ideation to execution for 'Worker Safety' and 'Asset Track & Trace' products. Responsible for IoT solution development with partners resulting in $400K partner investment & joint GTM. Led data-driven immersive store experience & field services use case development at the edge. Awarded Excellence in 'Customer Insights' for IoT product roadmap & strategy; O-Infinity award for Outstanding Performance. Exceeded revenue target expectations in FY19, achieving $8M+ from cloud-based IoT solutions and services.",
+      "tags": ["Product Management", "IoT", "Cloud Partners", "Edge Computing", "GTM Strategy"]
+    },
+    {
+      "role": "Product Manager",
+      "company": "HCL Technologies",
+      "logo": "images/logos/hcl.svg",
+      "location": "Bengaluru, India",
+      "from": "Jun 2014",
+      "to": "Feb 2017",
+      "description": "Founding member of IoT taskforce. Program managed the Conception and Launch of IoT Business Unit in HCL globally. Responsible for development of MVP on field services for a leading industrial manufacturer resulting in $90+ Million booking. Led product roadmap for 'Platform Acceleration Suite' resulting in faster development & launch of cloud applications by 40%. Led product definition for 'Product Intelligence', 'Aegis Gateway' & 'Pangea Analytics Framework'. Appreciated with Business Catalyst of the Year award at 2014 Sales Meet — Eagles Nest for product management in IoT.",
+      "tags": ["IoT", "MVP Development", "Platform Products", "Business Unit Launch", "Cloud Applications"]
+    },
+    {
+      "role": "Management Intern, Product Management",
+      "company": "HCL Technologies",
+      "logo": "images/logos/hcl.svg",
+      "location": "Noida, India",
+      "from": "Apr 2013",
+      "to": "Jun 2013",
+      "description": "Developed HCL's IoT product line's GTM strategy including market research, business case, target verticals, roadmap & marketing plan. Designed and developed pricing models for ten service lines of HCL using cost and benefits-based pricing.",
+      "tags": ["GTM Strategy", "Market Research", "Pricing Models"]
+    },
+    {
+      "role": "Associate, Technology",
+      "company": "Sapient Consulting Private Ltd",
+      "logo": "images/logos/sapient.svg",
+      "location": "Bengaluru, India",
+      "from": "Jul 2010",
+      "to": "May 2012",
+      "description": "Responsible for complete content management module for offshore/onsite teams in a €400,000 portal development project. Analyzed customer requirements, core development team of web portal application, reduced defects by 25%.",
+      "tags": ["Web Development", "Content Management", "Portal Development"]
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "Science of Storytelling: A Powerful Business Tool",
+      "institution": "Stanford University",
+      "logo": "images/logos/stanford.svg",
+      "from": "2019",
+      "to": "2019",
+      "description": "Executive course on leveraging storytelling for business communication and product strategy.",
+      "tags": ["Storytelling", "Business Communication"]
+    },
+    {
+      "degree": "Product Management for the Internet of Things",
+      "institution": "Stanford University",
+      "logo": "images/logos/stanford.svg",
+      "from": "2018",
+      "to": "2018",
+      "description": "Specialized course on IoT product management strategies, frameworks, and go-to-market approaches.",
+      "tags": ["IoT", "Product Management"]
+    },
+    {
+      "degree": "Master of Business Administration (MBA)",
+      "institution": "Indian Institute of Management Ahmedabad (IIMA)",
+      "logo": "images/logos/iima.svg",
+      "from": "2012",
+      "to": "2014",
+      "description": "One of the world's premier business schools. Focused on strategy, product management, and technology-driven business development.",
+      "tags": ["Strategy", "Product Management", "Business Development"]
+    },
+    {
+      "degree": "Bachelor of Engineering — Information Science",
+      "institution": "B.M.S College of Engineering, Bengaluru",
+      "logo": "images/logos/bmsce.svg",
+      "from": "2006",
+      "to": "2010",
+      "description": "Undergraduate studies in Information Science and Engineering. Conducted groundbreaking IoT research in collaboration with ERNET India and the Indian Institute of Science (IISc) — contributing to India's national IoT policy formation.",
+      "tags": ["Information Science", "IoT Research", "6LoWPAN"]
+    }
+  ],
+
+  "achievements": [
+    {
+      "emoji": "💰",
+      "title": "$70M Revenue Impact — Algorithmic Bidding",
+      "description": "Led implementation of algorithmic bidding strategies for campaign management at Walmart Connect, estimated to deliver $70M in revenue impact.",
+      "year": "2023"
+    },
+    {
+      "emoji": "🎯",
+      "title": "$50M Revenue Impact — Personalized Recommendations",
+      "description": "Developing AI-powered personalized recommendations for successful advertiser campaign setup, estimated with $50M revenue impact.",
+      "year": "2024"
+    },
+    {
+      "emoji": "🏆",
+      "title": "Best Team Launch Q3 2024 — 'Out of Budget' Feature",
+      "description": "The 'Out of Budget' platform feature led as Product Manager at Walmart was recognized as the Best Team Launch for Q3 2024.",
+      "year": "2024"
+    },
+    {
+      "emoji": "⚡",
+      "title": "81% Engineering Effort Saved — Pendo Integration",
+      "description": "Led Pendo platform integration at Walmart Connect, automating UI development and yielding data-driven user insights while saving 81% of engineering effort.",
+      "year": "2022"
+    },
+    {
+      "emoji": "📊",
+      "title": "70% Optimization Effort Reduction",
+      "description": "Spearheaded redesign, development & launch of optimization pages, reducing campaign & keyword optimization efforts by 70% for advertisers.",
+      "year": "2023"
+    },
+    {
+      "emoji": "🔄",
+      "title": "99.66% Click Reduction — Bulk Operations",
+      "description": "Developed & launched bulk operations feature enabling efficient optimization of multiple campaigns through 99.66% reduction in manual clicks.",
+      "year": "2023"
+    },
+    {
+      "emoji": "🏅",
+      "title": "O-Infinity Award for Outstanding Performance",
+      "description": "Recognized at HCL America for outstanding performance in IoT product roadmap & strategy, driving measurable business outcomes for enterprise clients.",
+      "year": "2018"
+    },
+    {
+      "emoji": "🌟",
+      "title": "Business Catalyst of the Year — HCL",
+      "description": "Awarded Business Catalyst of the Year at HCL's 2014 Sales Meet — Eagles Nest for exceptional product management in the IoT domain.",
+      "year": "2014"
+    },
+    {
+      "emoji": "💡",
+      "title": "Excellence in Customer Insights Award",
+      "description": "Awarded excellence in 'Customer Insights' for IoT product roadmap & strategy at HCL America.",
+      "year": "2018"
+    },
+    {
+      "emoji": "📈",
+      "title": "$24M+ Revenue Target Exceeded",
+      "description": "Exceeded revenue target of $24M and was the top performer in IoT business development FY19-20 for strategic hi-tech accounts at HCL America.",
+      "year": "2020"
+    },
+    {
+      "emoji": "🤝",
+      "title": "$400K Partner Investment & Joint GTM",
+      "description": "Led IoT solution development with cloud partners resulting in $400K partner investment and joint go-to-market strategy at HCL.",
+      "year": "2019"
+    },
+    {
+      "emoji": "🏭",
+      "title": "$90M+ Booking — Industrial IoT MVP",
+      "description": "Developed MVP on field services for a leading industrial manufacturer at HCL, resulting in $90+ Million in booking.",
+      "year": "2016"
+    },
+    {
+      "emoji": "⚖️",
+      "title": "Globee Awards Judge — AI, Disruptor & Technology",
+      "description": "Served as an official judge for the AI, Disruptor, and Technology categories of the Globee Awards, with certified recognition.",
+      "year": "2024",
+      "url": "https://globeeawards.com/"
+    },
+    {
+      "emoji": "🇮🇳",
+      "title": "National IoT Policy Impact — Undergraduate Research",
+      "description": "Undergraduate IoT research at IISc/ERNET India contributed to India's Draft IoT Policy, BIS national standards (IS8004:2021, IS8002, IS8003), and the Indo-German WASCA water conservation initiative.",
+      "year": "2010"
+    }
+  ],
+
+  "skills": [
+    {
+      "category": "Product Management",
+      "items": [
+        { "name": "Product Strategy & Roadmap", "icon": "fas fa-route" },
+        { "name": "Self-Serve Platform Design", "icon": "fas fa-desktop" },
+        { "name": "User Research & Insights", "icon": "fas fa-search" },
+        { "name": "A/B Testing & Experimentation", "icon": "fas fa-flask" },
+        { "name": "Feature Prioritization", "icon": "fas fa-sort-amount-up" },
+        { "name": "Stakeholder Management", "icon": "fas fa-handshake" },
+        { "name": "Agile / Scrum", "icon": "" }
+      ]
+    },
+    {
+      "category": "Advertising & Analytics",
+      "items": [
+        { "name": "Sponsored Search / SEM", "icon": "fas fa-ad" },
+        { "name": "Campaign Management", "icon": "fas fa-bullhorn" },
+        { "name": "Algorithmic Bidding", "icon": "fas fa-robot" },
+        { "name": "Pendo Analytics", "icon": "fas fa-chart-bar" },
+        { "name": "Power BI / Data Studio", "icon": "fas fa-chart-pie" },
+        { "name": "Revenue Optimization", "icon": "fas fa-dollar-sign" }
+      ]
+    },
+    {
+      "category": "Cloud & IoT",
+      "items": [
+        { "name": "Azure IoT Hub", "icon": "fab fa-microsoft" },
+        { "name": "Azure ML & Time Series Insights", "icon": "" },
+        { "name": "Google Cloud Platform", "icon": "fab fa-google" },
+        { "name": "Google IoT Core / BigQuery", "icon": "" },
+        { "name": "IaaS / PaaS / SaaS", "icon": "fas fa-cloud" },
+        { "name": "Edge Computing", "icon": "" },
+        { "name": "6LoWPAN / IoT Protocols", "icon": "" }
+      ]
+    },
+    {
+      "category": "Technical Skills",
+      "items": [
+        { "name": "SQL / MySQL", "icon": "fas fa-database" },
+        { "name": "NoSQL Databases", "icon": "" },
+        { "name": "Java", "icon": "fab fa-java" },
+        { "name": "Python", "icon": "fab fa-python" },
+        { "name": "HTML / JavaScript", "icon": "fab fa-js" },
+        { "name": "VBA", "icon": "" }
+      ]
+    },
+    {
+      "category": "Business & Strategy",
+      "items": [
+        { "name": "Business Development", "icon": "fas fa-briefcase" },
+        { "name": "Strategic Partnerships", "icon": "fas fa-link" },
+        { "name": "Go-to-Market Strategy", "icon": "fas fa-rocket" },
+        { "name": "Revenue Growth", "icon": "fas fa-chart-line" },
+        { "name": "Customer Insights", "icon": "fas fa-users" },
+        { "name": "Pricing Strategy", "icon": "fas fa-tags" },
+        { "name": "Program Management", "icon": "fas fa-project-diagram" }
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Self-Serve Advertising Platform — Walmart Connect",
+      "description": "Leading the development of cloud-based, self-service advertising features including campaign builder, optimization pages, bulk operations, and personalized recommendations for Walmart's sponsored search platform. Estimated $120M+ combined revenue impact.",
+      "emoji": "📢",
+      "tags": ["Advertising Tech", "Self-Serve Platform", "Analytics"],
+      "github": "",
+      "demo": "",
+      "featured": true
+    },
+    {
+      "title": "Algorithmic Bidding & Personalized Recommendations",
+      "description": "Implementing algorithmic bidding strategies ($70M impact) and AI-powered personalized campaign recommendations ($50M impact) to enable advertisers to optimize performance with data-driven insights.",
+      "emoji": "🤖",
+      "tags": ["AI/ML", "Revenue Optimization", "Campaign Management"],
+      "github": "",
+      "demo": "",
+      "featured": true
+    },
+    {
+      "title": "Sponsored Brands Launch",
+      "description": "Led development and launch of Sponsored Brands, providing advertisers access to premium search placements on Walmart.com with $9M revenue impact and enhanced brand visibility.",
+      "emoji": "🏷️",
+      "tags": ["Advertising Tech", "Product Launch", "Revenue Growth"],
+      "github": "",
+      "demo": "",
+      "featured": true
+    },
+    {
+      "title": "IoT Business Unit (IoT WoRKS) — HCL",
+      "description": "Founding member of the IoT Business Unit incubated within the CEO's office. Program managed conception, launch, and scaling of IoT products across field services, asset management, and industrial manufacturing. Drove $90M+ in bookings.",
+      "emoji": "📡",
+      "tags": ["IoT", "Cloud", "Enterprise", "Business Unit Launch"],
+      "github": "",
+      "demo": "",
+      "featured": true
+    },
+    {
+      "title": "Worker Safety & Asset Track & Trace Products",
+      "description": "Led roadmap definition with cloud partners (Azure, GCP) from ideation to execution for enterprise IoT solutions including worker safety monitoring and asset tracking with $400K partner investment.",
+      "emoji": "🛡️",
+      "tags": ["IoT", "Cloud Partners", "Enterprise Solutions"],
+      "github": "",
+      "demo": "",
+      "featured": false
+    },
+    {
+      "title": "6LoWPAN IoT Framework — National Impact Research",
+      "description": "Undergraduate research developing a 6LoWPAN-based wireless framework for soil monitoring in agriculture in collaboration with ERNET India and IISc. Contributed to India's national IoT policy, BIS standards, and the Indo-German WASCA initiative.",
+      "emoji": "🇮🇳",
+      "tags": ["IoT Research", "Government Policy", "Smart Agriculture"],
+      "github": "",
+      "demo": "",
+      "featured": false
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+/* ============================================================
+   PAGES — Shared styles for additional pages
+   ============================================================ */
+
+/* ── PAGE HERO HEADER ────────────────────────────────────────── */
+.page-hero {
+  padding: 140px 0 60px;
+  text-align: center;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.page-hero .section-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.page-hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.page-hero-subtitle {
+  max-width: 560px;
+  margin-inline: auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* ── RESPONSIVE — Pages ──────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 100px 0 40px;
+  }
+  .page-hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 88px 0 32px;
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "Pratibha Raju Prem Kumar",
+  "shortName": "Pratibha",
+  "tagline": "Product leader driving growth through self-serve advertising platforms, cloud innovation, and data-driven strategy at Walmart Connect.",
+  "footerTagline": "Transforming ideas into impactful products, one insight at a time.",
+  "contactSubtitle": "Interested in product strategy, platform innovation, or just want to connect? I'd love to hear from you.",
+  "palette": "parchment-ink",
+  "avatar": "images/pratibha.jpeg",
+  "resumePdf": "",
+
+  "about": "Results-driven product leader with 12+ years of industry experience, successfully delivering value through product management, business development, strategic partnerships, and strategy planning across advertising, IoT, cloud, and analytics domains.\n\nAt Walmart Connect, I spearhead the development of intuitive, self-service features on a cloud-based, analytics-driven platform designed for advertisers — enabling small and medium-sized businesses across the United States to effectively advertise, increase sales, and grow alongside Walmart.\n\nPreviously at HCL America, I was a founding member of the IoT Business Unit (IoT WoRKS), a strategic initiative incubated within the CEO's office. My expertise lies in developing and scaling data-driven, cloud-based products across diverse industry verticals — from field services and asset management to immersive retail experiences.\n\nMy undergraduate research in IoT at the Indian Institute of Science contributed to India's national IoT policy formation and smart infrastructure standards, demonstrating long-term innovation impact at the governmental level.",
+
+  "roles": [
+    "Staff Product Manager",
+    "Platform Innovation Leader",
+    "Advertising Technology Strategist",
+    "IoT & Cloud Product Visionary"
+  ],
+
+  "status": "Staff Product Manager @ Walmart Connect",
+
+  "highlights": [
+    { "icon": "fas fa-map-marker-alt", "text": "Based in Danville, California" },
+    { "icon": "fas fa-briefcase",      "text": "Staff Product Manager @ Walmart Connect" },
+    { "icon": "fas fa-graduation-cap", "text": "MBA — IIM Ahmedabad | B.E. — BMS College of Engineering" },
+    { "icon": "fas fa-award",          "text": "Stanford University — IoT & Storytelling Courses" },
+    { "icon": "fas fa-dollar-sign",    "text": "$120M+ estimated revenue impact at Walmart" },
+    { "icon": "fas fa-gavel",          "text": "Judge — Globee Awards (AI, Disruptor, Technology)" },
+    { "icon": "fas fa-globe",          "text": "IAB Member — Interactive Advertising Bureau" }
+  ],
+
+  "beyondWork": {
+    "title": "Industry Engagement",
+    "subtitle": "Speaking, judging, and shaping the future of technology",
+    "items": [
+      {
+        "emoji": "🌐",
+        "role": "Speaker & Exhibitor",
+        "event": "Mobile World Congress",
+        "location": "Barcelona, Spain",
+        "description": "Represented HCL America and showcased IoT and cloud platform products at the world's largest mobile industry gathering.",
+        "url": "https://www.mwcbarcelona.com/"
+      },
+      {
+        "emoji": "🤖",
+        "role": "Speaker & Exhibitor",
+        "event": "IBM Watson Conference",
+        "location": "Las Vegas, NV",
+        "description": "Demonstrated IoT and analytics solutions at IBM's flagship AI and data conference, showcasing enterprise cloud applications.",
+        "url": "https://www.ibm.com/watson"
+      },
+      {
+        "emoji": "📡",
+        "role": "Speaker & Exhibitor",
+        "event": "IoT World Forum & IoT World",
+        "location": "London / Santa Clara",
+        "description": "Presented products at the premier IoT conferences, engaging with enterprise clients and cloud partners on next-generation solutions.",
+        "url": "https://tmt.knect365.com/iot-world/"
+      },
+      {
+        "emoji": "⚖️",
+        "role": "Awards Judge",
+        "event": "Globee Awards — AI, Disruptor & Technology",
+        "location": "Global",
+        "description": "Served as an official judge evaluating submissions in AI, Disruptor, and Technology categories, with certified recognition for participation.",
+        "url": "https://globeeawards.com/"
+      },
+      {
+        "emoji": "🏥",
+        "role": "Speaker & Exhibitor",
+        "event": "HIMSS Annual Conference & Exhibition",
+        "location": "Orlando, FL",
+        "description": "Showcased healthcare IoT solutions at the leading health information and technology conference.",
+        "url": "https://www.himss.org/"
+      },
+      {
+        "emoji": "⚙️",
+        "role": "Speaker & Exhibitor",
+        "event": "PTC LiveWorx Global",
+        "location": "Nashville, TN",
+        "description": "Presented IoT platform and digital transformation solutions at PTC's annual global technology event.",
+        "url": "https://www.ptc.com/en/liveworx"
+      }
+    ]
+  },
+
+  "stats": [
+    { "value": "12+",   "label": "Years of Experience" },
+    { "value": "$120M+", "label": "Revenue Impact" },
+    { "value": "70%",   "label": "Optimization Effort Reduced" },
+    { "value": "$24M+", "label": "Revenue Targets Exceeded" }
+  ],
+
+  "socials": [
+    { "platform": "linkedin", "url": "https://www.linkedin.com/in/pratibha-r-39941424/" }
+  ],
+
+  "mediaCoverage": [],
+
+  "contactItems": [
+    { "icon": "fab fa-linkedin",       "label": "LinkedIn", "value": "linkedin.com/in/pratibha-r-39941424" }
+  ]
+}

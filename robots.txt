@@ -1,0 +1,25 @@
+# Robots.txt for pratibharpk.com
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pratibharpk.com/sitemap.xml
+
+# Disallow admin and internal directories
+Disallow: /admin/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /data/
+Disallow: /og-generator.html
+
+# Allow specific data files needed for rendering
+Allow: /data/profile.json
+Allow: /data/resume.json
+Allow: /posts/
+
+# Allow all crawlers to access blog content
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
